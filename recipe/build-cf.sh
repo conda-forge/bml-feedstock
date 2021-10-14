@@ -9,5 +9,6 @@ if [[ "${mpi}" != "nompi" ]]; then
 fi
 
 export INSTALL_DIR=${PREFIX}
+export FFLAGS="${FFLAGS} ${EXTRA_FFLAGS}"
 
 ./build.sh install
