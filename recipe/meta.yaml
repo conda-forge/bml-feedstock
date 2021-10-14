@@ -1,5 +1,5 @@
 {% set name = "bml" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 {% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 
@@ -9,9 +9,7 @@ package:
 
 source:
   url: https://github.com/lanl/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ffb590b745888bbf1ff1892e920c29dd3edd7b29405ade3a738df4db5b1e2370
-  patches:
-    - cmake-install-libdir.patch
+  sha256: f95f0289d055a91d8499e2a37f785f69ca3b86dc6cf16726ee6c433b8b8a7f62
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
