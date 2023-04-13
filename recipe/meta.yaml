@@ -26,7 +26,6 @@ build:
     - BML_MPI=yes  # [mpi != "nompi"]
     - BML_COMPLEX=yes
     - BML_TESTING=yes
-    - BLAS_VENDOR=GNU
     - EXTRA_FFLAGS=-ffree-line-length-none
 
   {% if mpi != "nompi" %}
