@@ -1,5 +1,5 @@
 {% set name = "bml" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 {% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/lanl/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 41703eee605bcb0ce3bcb5dde5914363aaa382393138ab24f02acf84f670fad0
+  sha256: 45f02101b934b9d01dafeab28ca786cea1b5b4ef3096cf50d73e098916c857b2
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
@@ -18,7 +18,7 @@ build:
   number: {{ build }}
   skip: true  # [win or osx]
 
-  script: "bash ${RECIPE_DIR}/build-cf.sh"
+  script: bash ${RECIPE_DIR}/build-cf.sh
   script_env:
     - CMAKE_BUILD_TYPE=Release
     - BUILD_SHARED_LIBS=yes
@@ -26,7 +26,6 @@ build:
     - BML_MPI=yes  # [mpi != "nompi"]
     - BML_COMPLEX=yes
     - BML_TESTING=yes
-    - BLAS_VENDOR=GNU
     - EXTRA_FFLAGS=-ffree-line-length-none
 
   {% if mpi != "nompi" %}
