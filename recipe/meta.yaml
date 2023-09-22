@@ -1,5 +1,5 @@
 {% set name = "bml" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 {% set build = 0 %}
 {% set mpi = mpi or "nompi" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/lanl/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 45f02101b934b9d01dafeab28ca786cea1b5b4ef3096cf50d73e098916c857b2
+  sha256: 338474ec7f6c5351eb7092791082063d4284e8e961824b9850516fffcc2b0605
 
 {% if mpi == "nompi" %}
 {% set build = build + 100 %}
